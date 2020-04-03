@@ -30,7 +30,7 @@ function autoloadMainClasses($className)
     
     if(!@include_once $className.'.php')
     {
-        var_dump($className.'.php');
+        //var_dump($className.'.php');
         throw new RouteException('Неверное имя файла');
     }
     

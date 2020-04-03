@@ -1,7 +1,7 @@
 <?php
 namespace core\base\controller;
 use core\base\exceptions\RouteException;
-
+use core\base\settings\Settings;
 //require_once('core/base/exceptions/RouteException.php');
 abstract class BaseController
 {
@@ -16,9 +16,8 @@ abstract class BaseController
     public function route()
     {
         $controller = str_replace('/','\\', $this->controller);
-        var_dump($controller);
-        // $object = new \ReflectionMethod($controller, "request");
-        // var_dump($object);
+        //var_dump($controller);
+
         try {
             $object = new \ReflectionMethod($controller, "request");
             $args = [
@@ -40,9 +39,20 @@ abstract class BaseController
 
         $inputData = $args['inputMethod'];
         $outputData = $args['outputMethod'];
+        
+        $data = $this->$inputData();
 
-        $this->inputData();// $this->$inputData()
-        $this->page = $this->outputData();//$this->page = $this->$outputData()
+        if(method_exists($this,$outputData))
+        {
+            $page = $this->$outputData($data);
+            if($page)
+            {
+                $this->page = $page;
+            }
+        }
+        elseif ($data) {
+            $this->page = $data;
+        }
 
         if($this->errors)
         {
@@ -54,18 +64,45 @@ abstract class BaseController
 
     protected function render($path = '', $parameters = [])
     {
-        extract($parameters);
+
+        extract($parameters); //создаёт переменные из массива
 
         if(!$path)
         {
-            $path = TEMPLATE.explode('controller', strtolower((new \ReflectionClass($this))->getShortName()))[0];
-            var_dump($path);
+            $class = new \ReflectionClass($this);
+            $space = str_replace('\\','/',$class->getNameSpaceName().'\\');
+            $routes = Settings::get('routes');
+
+            if($space === $routes['user']['path'])
+            {
+                $template = TEMPLATE;
+            }else {
+                    $template = ADMIN_TEMPLATE;
+            }
+
+            $path = $template.explode('controller', strtolower($class->getShortName()))[0];
         }
+        
+        ob_start();//открывает текущий буфер обмена
+        if(!@include_once $path.'.php')
+        {
+            throw new RouteException('Отсутсвует шаблон -'.$path);
+        }
+        return ob_get_clean();
     }
 
     protected function getPage()
     {
-        exit($exit->page);
+        if(is_array($this->page))
+        {
+            foreach ($this->page as $block) {
+                echo $block;
+            }
+        }
+        else {
+            echo $this->page;
+        }
+        exit();
     }
 }
 ?>
