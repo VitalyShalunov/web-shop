@@ -34,8 +34,9 @@ class RouteController extends BaseController
        
         if(strrpos($adress_str, '/') === strlen($adress_str)-1 && strrpos($adress_str,'/')!==0)
         {
-            header('Location: http://'.$_SERVER['HTTP_HOST'].rtrim($adress_str,'/'));
+            //header('Location: http://'.$_SERVER['HTTP_HOST'].rtrim($adress_str,'/'));
             $this->redirect(rtrim($adress_str,'/'),301);
+            //header("HTTP/1.1 301 Moved Permanently");
         }
         $path = substr($_SERVER['PHP_SELF'],0,strpos($_SERVER['PHP_SELF'], 'index.php'));
        

@@ -19,10 +19,4 @@ try {
 } catch (RouteException $e) {
     $e->getMessage();
 }
-// function   load($className)
-// {
-//     $className = str_replace('\\', '/', $className);
-//     include $className.'.php';
-// }
-// spl_autoload_register('load');
 ?>

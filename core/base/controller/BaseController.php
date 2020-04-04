@@ -5,6 +5,7 @@ use core\base\settings\Settings;
 //require_once('core/base/exceptions/RouteException.php');
 abstract class BaseController
 {
+    use \core\base\controller\BaseMethods;
     protected $page;
     protected $errors;
 
@@ -16,7 +17,6 @@ abstract class BaseController
     public function route()
     {
         $controller = str_replace('/','\\', $this->controller);
-        //var_dump($controller);
 
         try {
             $object = new \ReflectionMethod($controller, "request");
@@ -28,7 +28,6 @@ abstract class BaseController
            
             $object->invoke(new $controller, $args);
         } catch (\ReflectionException $e) {
-            echo "heregg";
             throw new RouteException($e->getMessage());
         }
     }
