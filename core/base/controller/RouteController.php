@@ -7,7 +7,7 @@ use core\base\settings\ShopSettings;
 //use core\base\controller\{BaseController};
 class RouteController extends BaseController
 {
-    static private $_instance;
+    use Singleton;
 
     protected $routes;
 
@@ -15,18 +15,6 @@ class RouteController extends BaseController
     protected $inputMethod;
     protected $outputMethod;
     protected $parameters;
-
-    private function __clone()
-    {
-    }
-
-    static public function getInstance()
-    {
-        if (self::$_instance instanceof self) {
-            return self::$_instance;
-        }
-        return self::$_instance = new self;
-    }
 
     public function __construct()
     {
@@ -57,8 +45,9 @@ class RouteController extends BaseController
                    
                     if(file_exists($_SERVER['DOCUMENT_ROOT'].PATH.$pluginSettings.'.php'))
                     {
-                        $pluginSettings = explode('/', $pluginSettings);
-                        $pluginSettings = $pluginSettings[count($pluginSettings)-1];
+                        $pluginSettings = str_replace('/', '\\', $pluginSettings);
+                        // $pluginSettings = explode('/', $pluginSettings);
+                        // $pluginSettings = $pluginSettings[count($pluginSettings)-1];
                         $this->routes = $pluginSettings::get('routes');
                     }
                     $dir = $this->routes['plugins']['dir'] ? '/'.$this->routes['plugins']['dir'] : '/';
@@ -119,6 +108,7 @@ class RouteController extends BaseController
                 exit($e->getMessage());
             }
         }
+        //var_dump($this);
     }
 
     private function createRoute($var, $arr)

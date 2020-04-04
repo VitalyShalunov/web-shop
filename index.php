@@ -14,7 +14,7 @@ use core\base\controller\RouteController;
 try {
    // phpinfo();
    //$object = new \ReflectionMethod('core\user\controller\IndexController', "request");
-    RouteController::getInstance()->route();
+    RouteController::instance()->route();
     
 } catch (RouteException $e) {
     $e->getMessage();
