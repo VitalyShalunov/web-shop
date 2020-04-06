@@ -6,3 +6,51 @@ Fault: 06-04-2020 10:23:59 - Ошибка в SQL запросе: SELECT *FROM ar
 fileW:\domains\web-shop\core\base\model\BaseModel.php
 In line24
 
+Fault: 06-04-2020 12:00:51 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:00:52 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:05:57 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:05:57 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:06:31 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:06:32 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:06:33 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:06:41 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:06:42 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:06:42 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:06:42 - Ошибка в SQL запросе: SELECT teachers.idteachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
+Fault: 06-04-2020 12:18:25 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers    1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+

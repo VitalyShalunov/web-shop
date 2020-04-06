@@ -9,11 +9,19 @@ class IndexController extends BaseController
     {
         $db = Model::instance();
 
-        $query = "SELECT *FROM articles";
-
-        $res = $db->query($query);
-        var_dump($res);
-        exit("admin");
+        $table = 'teachers';
+        $res = $db->get($table,
+        [
+            'fields'=>[],
+            'where' => ['surname'=>'Stavrovskaya', 'name'=>'Maria'],
+            'operand'=> ['IN','='],
+            'condition'=> ['AND'],
+            'order'=> ['surname','name'],
+            'orderDirection'=> ['ASC','DESC'],
+            'limit'=> ''
+        ]);
+       var_dump($res);
+        exit();
     }
     
 }
