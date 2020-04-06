@@ -6,17 +6,13 @@ session_start();//хранится информация в рамках одно
 require_once 'config.php';
 require_once 'core/base/settings/internal_settings.php';//хранятся базовые настройки настройки 
 
-//require_once 'core/base/exceptions/RouteException.php';
 use core\base\exceptions\RouteException;
 use core\base\controller\RouteController;
-//require_once 'core/base/controller/RouteController.php';
 
 try {
-   // phpinfo();
-   //$object = new \ReflectionMethod('core\user\controller\IndexController', "request");
     RouteController::instance()->route();
     
 } catch (RouteException $e) {
-    $e->getMessage();
+    exit($e->getMessage());
 }
 ?>

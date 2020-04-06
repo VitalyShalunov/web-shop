@@ -3,8 +3,7 @@ namespace core\base\controller;
 
 use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
-use core\base\settings\ShopSettings;
-//use core\base\controller\{BaseController};
+
 class RouteController extends BaseController
 {
     use Singleton;
@@ -31,7 +30,7 @@ class RouteController extends BaseController
         if ($path===PATH)
         {
             $this->routes = Settings::get('routes');
-            if(!$this->routes) throw new RouteException("Сайт находится в техническом обслуживании");
+            if(!$this->routes) throw new RouteException("Отсутсвуют маршруты в базовых настройках",1);
 
             $url = explode('/', substr($adress_str,strlen(PATH)));
 
@@ -102,13 +101,8 @@ class RouteController extends BaseController
             }
         }
         else {
-            try {
-                throw new \RouteException("Некорректное подключеие");
-            } catch (\RouteException $e) {
-                exit($e->getMessage());
-            }
+            throw new RouteException("Некорректное подключеие",1);
         }
-        //var_dump($this);
     }
 
     private function createRoute($var, $arr)
