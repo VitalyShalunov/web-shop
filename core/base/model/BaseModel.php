@@ -57,13 +57,46 @@ class BaseModel{
      * 'order'=> ['surname','name'],
      * 'orderDirection'=> ['ASC','DESC'],
      * 'limit'=> '1'
+     * 'join' => [
+     *               [
+     *                  'table' => 'joinTable1',
+     *                   'fields' => ['id as jId', 'name as jName'],
+     *                   'type' => 'left',
+     *                   'where' => ['name' => 'sasha'],
+     *                   'operand' => ['='],
+     *                   'condition' => ['OR'],
+     *                  'on' => ['id', 'parentId'],
+     *                  'groupCondition'=>'AND'
+     *              ],
+     *               [
+     *                   'table' => 'joinTable2',
+     *                   'fields' => ['id as j2Id', 'name as j2Name'],
+     *                   'type' => 'left',
+     *                   'where' => ['name' => 'sasha'],
+     *                   'operand' => ['='],
+     *                   'condition' => ['OR'],
+     *                  'on' => [
+     *                      'table' => 'teachers',
+     *                      'fileds' => ['id', 'parentId']
+     *                  ]
+     *              ]
+     *          ]
      */
     final function get($table, $set = [])
     {
         
         $fields = $this->createFields($table, $set);
         $where = $this->createWhere($table, $set);
-        $joinArr = $this->createJoin($table, $set);
+
+        if(!$where)
+        {
+            $newWhere = true;
+        }
+        else {
+            $newWhere = false;
+        }
+
+        $joinArr = $this->createJoin($table, $set, $newWhere);
 
         $fields.=$joinArr['fields'];
         $join=$joinArr['join'];
@@ -109,7 +142,7 @@ class BaseModel{
 
             $o_count = 0;
             $c_count = 0;
-
+         
             foreach ($set['where'] as $key => $item) {
                 $where.=' ';
 
@@ -120,8 +153,7 @@ class BaseModel{
                 else {
                     $operand = $set['operand'][$o_count-1];
                 }
-
-                if($set['condition'][$o_count]){
+                if($set['condition'][$c_count]){
                     $condition = $set['condition'][$c_count];
                     $c_count++;
                 }
@@ -150,15 +182,120 @@ class BaseModel{
                         }
                     }
                     $where.=$table.$key.' '.$operand.' ('.trim($inStr,',').') '.$condition;
-                    var_dump($where);
+                }
+                elseif (strpos($operand, 'LIKE')!== false) {
+                    $likeTemp = explode('%', $operand);
+                    foreach ($likeTemp as $ltKey => $lt) {
+                       if(!$lt)
+                       {
+                           if(!$ltKey)
+                           {
+                               $item = '%' . $item;
+                           }
+                           else {
+                               $item.='%';
+                           }
+                       }
+                    }
+                    $where.=$table.$key.' LIKE '."'".$item."' $condition";
+                }
+                else {
+                    if(strpos($item, 'SELECT')===0)
+                    {
+                        $where.=$table.$key.$operand.'('.$item.") $condition";
+                    }
+                    else {
+                        $where.=$table.$key.$operand."'".$item."' $condition";
+                    }
                 }
             }
+           $where = substr($where,0,strrpos($where,$condition)) ;
         }
+        return $where;
     }
 
-    protected function createJoin($table, $set)
+    protected function createJoin($table, $set, $newWhere = false)
     {
-        
+        $fields='';
+        $join = '';
+        $where = '';
+
+        if($set['join'])
+        {
+            $joinTable = $table;
+
+            foreach ($set['join'] as $key => $item) {
+                if(is_int($key))
+                {
+                    if(!$item['table'])
+                    {
+                        continue;
+                    }
+                    else {
+                        $key = $item['table'];
+                    }
+                }
+                if($join)
+                {
+                    $join.=' ';
+                }
+
+                if($item['on'])
+                {
+                    $joinFields = [];
+
+                    switch (2) {
+                        case count($item['on']['fields']):
+                            $joinFields = $item['on']['fields'];
+                            break;
+                        case count($item['on']):
+                            $joinFields = $item['on'];
+                            break;
+                        default:
+                           continue 2;
+                            break;
+                    }
+
+                    if(!$item['type'])
+                    {
+                        $join.='LEFT JOIN';
+                    }
+                    else{
+                        $join.=trim(strtoupper($item['type'])).'JOIN';
+                    }
+                    $join.=$key.' ON ';
+
+                    if($item['on']['table'])
+                    {
+                        $join.=$item['on']['table'];
+                    }
+                    else {
+                        $join.=$joinTable;
+                    }
+
+                    $join.='.'.$joinFields[0].'='.$key.'.'.$joinFields[1];
+
+                    $joinTable = $key;
+
+                    if($newWhere)
+                    {
+                        if($item['where'])
+                        {
+                            $newWhere = false;
+                        }
+                        $groupCondition = 'WHERE';
+                    }
+                    else {
+                        $groupCondition = $item['groupCondition']?strtoupper($item['groupCondition']):'AND';
+                    }
+
+                    $fields.=$this->createFields($key, $item);
+                    $where.=$this->createFields($key, $item, $groupCondition);
+                }
+            }
+
+            return compact('fields','join','where');
+        }
     }
 
     protected function createOrder($table, $set)
@@ -180,7 +317,14 @@ class BaseModel{
                 else {
                     $orderDirection = strtoupper($set['orderDirection'][$directCount-1]);
                 }
-                $orderBy.=$table.$order.' '.$orderDirection.',';
+                if(is_int($order))
+                {
+                    $orderBy.=$order.' '.$orderDirection.','; 
+                }
+                else {
+                    $orderBy.=$order.' '.$orderDirection.',';
+                }
+               
             }
             $orderBy = rtrim($orderBy,',');
         }
