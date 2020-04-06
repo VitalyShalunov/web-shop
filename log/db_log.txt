@@ -1,0 +1,8 @@
+Fault: 06-04-2020 9:44:16 - Ошибка подключения к базе данных 1049 Unknown database 'webshop1'
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line13
+
+Fault: 06-04-2020 10:23:59 - Ошибка в SQL запросе: SELECT *FROM articles - 1146 Table 'webshop.articles' doesn't exist
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line24
+
