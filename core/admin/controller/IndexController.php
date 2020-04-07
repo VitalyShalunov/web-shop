@@ -14,13 +14,13 @@ class IndexController extends BaseController
         $res = $db->get(
             $table,
             [
-                'fields' => [],
-                'where' => ['name' => 'Maria, Olya', 'middleName' => 'Andreevna', 'surname' => 'Stavrovskaya', 'car' => 'Porshe', 'color' => $color],
-                'operand' => ['IN', 'LIKE%', '<>', '=', 'NOT IN'],
-                'condition' => ['AND'],
-                'order' => ['surname', 'name'],
-                'orderDirection' => ['ASC', 'DESC'],
-                'limit' => '',
+                'fields' => ['id','name'],
+                'where' => ['name' => "Maria"],
+                // 'operand' => ['IN'],
+                // 'condition' => ['AND','OR'],
+                'order' => ['name'],
+                'orderDirection' => ['DESC'],
+                'limit' => '1',
                 'join' => [
                     [
                         'table' => 'joinTable1',
@@ -31,7 +31,7 @@ class IndexController extends BaseController
                         'condition' => ['OR'],
                         'on' => [
                             'table' => 'teachers',
-                            'fileds' => ['id', 'parentId']
+                            'fields' => ['id', 'parentId']
                         ]
                     ],
                     [
@@ -39,17 +39,13 @@ class IndexController extends BaseController
                         'fields' => ['id as j2Id', 'name as j2Name'],
                         'type' => 'left',
                         'where' => ['name' => 'sasha'],
-                        'operand' => ['='],
+                        'operand' => ['<>'],
                         'condition' => ['OR'],
-                        'on' => [
-                            'table' => 'teachers',
-                            'fileds' => ['id', 'parentId']
-                        ]
+                        'on' => ['id', 'parentId']
                     ]
-                ]
+                 ]
             ]
         );
-      // var_dump($res);
         exit();
     }
     

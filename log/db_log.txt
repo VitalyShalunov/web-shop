@@ -54,3 +54,11 @@ Fault: 06-04-2020 12:18:25 - Ошибка в SQL запросе: SELECT teachers
 fileW:\domains\web-shop\core\base\model\BaseModel.php
 In line24
 
+Fault: 07-04-2020 16:00:16 - Ошибка в SQL запросе: SELECT teachers.* FROM teachers  WHERE teachers.name IN ('Maria','Olya') AND teachers.middleName LIKE 'Andreevna%' AND teachers.surname<>'Stavrovskaya' AND teachers.car='Porshe' AND teachers.color NOT IN ('green','red','blue')  ORDER BY surname ASC,name DESC  - 1054 Unknown column 'teachers.car' in 'where clause'
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line23
+
+Fault: 07-04-2020 16:00:16 - Ошибка в SQL запросе: SELECT teachers.* FROM teachers  WHERE teachers.name IN ('Maria','Olya') AND teachers.middleName LIKE 'Andreevna%' AND teachers.surname<>'Stavrovskaya' AND teachers.car='Porshe' AND teachers.color NOT IN ('green','red','blue')  ORDER BY surname ASC,name DESC  - 1054 Unknown column 'teachers.car' in 'where clause'
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line23
+
