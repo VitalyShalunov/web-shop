@@ -62,3 +62,127 @@ Fault: 07-04-2020 16:00:16 - Ошибка в SQL запросе: SELECT teachers
 fileW:\domains\web-shop\core\base\model\BaseModel.php
 In line23
 
+Fault: 07-04-2020 18:01:55 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name,joinTable1.id as jId,joinTable1.name as jName,joinTable2.id as j2Id,joinTable2.name as j2Name FROM teachers LEFT JOIN joinTable1 ON teachers.id=joinTable1.parentId LEFT JOIN joinTable2 ON joinTable1.id=joinTable2.parentId WHERE teachers.name='Maria' AND joinTable1.name='sasha' AND joinTable2.name<>'sasha'  ORDER BY name DESC LIMIT 1 - 1146 Table 'webshop.jointable1' doesn't exist
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 07-04-2020 18:02:54 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name,joinTable1.id as jId,joinTable1.name as jName,joinTable2.id as j2Id,joinTable2.name as j2Name FROM teachers LEFT JOIN joinTable1 ON teachers.id=joinTable1.parentId LEFT JOIN joinTable2 ON joinTable1.id=joinTable2.parentId WHERE teachers.name='Maria' AND joinTable1.name='sasha' AND joinTable2.name<>'sasha'  ORDER BY name DESC LIMIT 1 - 1146 Table 'webshop.jointable1' doesn't exist
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:28:54 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES 'Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]', - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES 'Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:30:42 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:30:43 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:32:59 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:33:34 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:34:07 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:35:03 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:35:23 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:35:25 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:35:25 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:35:39 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:37:31 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:37:56 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:38:11 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:40:47 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:41:01 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:42:22 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:47:07 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:47:25 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:47:51 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:48:03 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:48:11 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:48:21 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:48:40 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:48:57 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:49:39 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:49:40 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:49:40 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
+Fault: 08-04-2020 10:49:40 - Ошибка в SQL запросе: INSERT INTO teachers (name,middleName,surname,galleryImg,img,) VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"]','main_img.jpg',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Yuryevna','Shalunova','[\"green.jpg\",\"red.jpg\",\"blue.jpg\"' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+
