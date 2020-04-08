@@ -191,6 +191,8 @@ abstract class BaseModelMethods
         }
     }
 
+    
+
     protected function createOrder($set, $table=false)
     {
         $table = $table ? $table.'.':'';
@@ -280,7 +282,7 @@ abstract class BaseModelMethods
                     $update.=$value.',';
                 }
                 elseif ($value === NULL) {
-                    $update.="$value".',';
+                    $update.="NULL".',';
                 }
                 else {
                     $update.="'".addslashes($value)."',";
