@@ -186,3 +186,7 @@ Fault: 08-04-2020 10:49:40 - Ошибка в SQL запросе: INSERT INTO tea
 fileW:\domains\web-shop\core\base\model\BaseModel.php
 In line26
 
+Fault: 08-04-2020 14:27:12 - Ошибка в SQL запросе: UPDATE teachers SET name='Masha' WHERE  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileW:\domains\web-shop\core\base\model\BaseModel.php
+In line26
+

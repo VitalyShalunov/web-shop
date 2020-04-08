@@ -126,8 +126,11 @@ class BaseModel extends BaseModelMethods{
     final public function add($table, $set = [])
     {
        
-        $set['fields'] = (is_array($set['fields'])&&!empty($set['fields']))?$set['fields']:false;
-        $set['files'] = (is_array($set['files'])&&!empty($set['files']))?$set['files']:false;
+        $set['fields'] = (is_array($set['fields'])&&!empty($set['fields'])) ? $set['fields']:$_POST;
+        $set['files'] = (is_array($set['files'])&&!empty($set['files'])) ? $set['files']:false;
+
+        if(!$set['fields'] && !$set['files'])
+            return false;
 
         $set['returnId'] = $set['returnId']? $set['returnId']:false;
         $set['except'] = (is_array($set['except'])&&!empty($set['except']))?$set['except']:false;
@@ -141,7 +144,60 @@ class BaseModel extends BaseModelMethods{
         }
 
         return false;
+    }
 
+    final public function edit($table, $set = [])
+    {
+        $set['fields'] = (is_array($set['fields'])&&!empty($set['fields'])) ? $set['fields']:$_POST;
+        $set['files'] = (is_array($set['files'])&&!empty($set['files'])) ? $set['files']:false;
+
+        if(!$set['fields'] && !$set['files'])
+            return false;
+
+        $set['except'] = (is_array($set['except'])&&!empty($set['except']))?$set['except']:false;
+
+        if(!$set['allRows']) {
+            if ($set['where']) {
+                $where = $this->createWhere($set);
+            } else {
+                $columns = $this->showColumns($table);
+
+                if (!$columns) {
+                    return false;
+                }
+
+                if ($columns['idRow'] && $set['fields'][$columns['idRow']]) {
+                   $where = 'WHERE ' . $columns['idRow']. '=' .$set['fields'][$columns['idRow']];
+                   unset($set['fields'][$columns['idRow']]);
+                }
+            }
+        }
+        $update = $this->createUpdate($set['fields'], $set['files'], $set['except']);
+
+        $query = "UPDATE $table SET $update $where";
+
+        return $this->query($query, 'u');
+    }
+
+    final public function showColumns($table)
+    {
+        $query = "SHOW COLUMNS FROM $table";
+
+        $res = $this->query($query);
+        
+        $columns = [];
+        
+        if($res)
+        {
+            foreach ($res as $col) {
+                //var_dump($col);
+                $columns[$col['Field']] = $col;
+                if ($col['Key'] === 'PRI') {
+                    $columns['idRow'] = $col['Field'];
+                }
+            }
+        }
+        return  $columns;
     }
 }
 ?>
