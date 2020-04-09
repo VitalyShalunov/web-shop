@@ -237,7 +237,7 @@ class BaseModel extends BaseModelMethods{
             }
             $update = $this->createUpdate($fields, false, false);
             $query = "UPDATE $table SET $update $where";
-            //var_dump($query);
+           
         }
         else {
             $joinArr = $this->createJoin($set, $table);

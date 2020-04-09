@@ -38,6 +38,8 @@ class Settings
         ]
     ];
 
+    private $defaultTable = 'teachers';
+
     private $templateArr = [
         'text' => ['name', 'phone', 'adress'],
         'textarea' => ['content', 'keyword']
